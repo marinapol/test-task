@@ -46,11 +46,15 @@ public class CreditLayout extends VerticalLayout {
     }
 
     public void init() {
+        creditDAO = new CreditDAO();
 
         initButtonsLayout();
         initButtonsListeners();
         initCreditGrid();
-        addComponents(buttonsLayout, creditGrid);
+
+        setHeightFull();
+        addComponent(buttonsLayout);
+        addComponentsAndExpand(creditGrid);
     }
 
     private void initCreditGrid() {
@@ -99,7 +103,6 @@ public class CreditLayout extends VerticalLayout {
     }
 
     public void addCreditBtnClick() {
-        creditDAO = new CreditDAO();
         Credit newCredit = new Credit();
         newCredit.setCreditBank(creditsBank);
 
@@ -129,8 +132,6 @@ public class CreditLayout extends VerticalLayout {
     }
 
     public void editCreditBtnClick() {
-
-        creditDAO = new CreditDAO();
         CreditWindow creditWindow = new CreditWindow(Constants.EDIT_CREDIT);
         creditWindow.init(getSelectedCredit());
         creditWindow.getAcceptAddCreditBtn().addClickListener(new Button.ClickListener() {
@@ -156,8 +157,6 @@ public class CreditLayout extends VerticalLayout {
     }
 
     public void deleteCreditBtnClick() {
-
-        creditDAO = new CreditDAO();
         Window deleteCreditWindow = new Window(Constants.DELETE_CREDIT);
         VerticalLayout verticalLayout = new VerticalLayout();
         HorizontalLayout actions = new HorizontalLayout();

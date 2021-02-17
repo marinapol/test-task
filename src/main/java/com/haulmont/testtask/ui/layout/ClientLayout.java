@@ -53,7 +53,9 @@ public class ClientLayout extends VerticalLayout {
         initButtonsListeners();
         initClientGrid();
 
-        addComponents(buttonsLayout, clientGrid);
+        setHeightFull();
+        addComponents(buttonsLayout);
+        addComponentsAndExpand(clientGrid);
     }
     private void initButtonsLayout() {
         buttonsLayout = new HorizontalLayout();

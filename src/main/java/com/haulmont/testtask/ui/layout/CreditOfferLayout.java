@@ -61,7 +61,10 @@ public class CreditOfferLayout extends VerticalLayout {
         initButtonsLayout();
         initButtonsListeners();
         initCreditOfferGrid();
-        addComponents(buttonsLayout, creditOfferGrid);
+
+        setHeightFull();
+        addComponent(buttonsLayout);
+        addComponentsAndExpand(creditOfferGrid);
     }
 
     private void initButtonsLayout() {
@@ -201,7 +204,6 @@ public class CreditOfferLayout extends VerticalLayout {
     }
 
     private void deleteBtnClick() {
-        creditOfferDAO = new CreditOfferDAO();
         ConfirmWindow confirmWindow = new ConfirmWindow(Constants.DELETE_CREDIT_OFFER);
         confirmWindow.init(Constants.DELETE_CREDIT_OFFER);
         confirmWindow.getAcceptButton().addClickListener(new Button.ClickListener() {

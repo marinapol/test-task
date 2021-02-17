@@ -75,12 +75,12 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-tabs-flow</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-date-picker-flow</artifactId>
             <version>18.0.5</version>
         </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -92,7 +92,6 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.4.28.Final</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.hsqldb/hsqldb -->
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
@@ -102,7 +101,6 @@
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -138,7 +136,6 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.36.v20210114</version>
-
             </plugin>
         </plugins>
     </build>
